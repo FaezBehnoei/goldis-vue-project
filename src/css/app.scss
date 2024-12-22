@@ -1,1 +1,20 @@
 // app global css in SCSS form
+body{
+    background-color: #EEEEEE;
+    font-family: 'shabnam';
+}
+
+@font-face {
+    font-family: 'shabnam';
+    src: url('./fonts/typeface/Shabnam.ttf');
+}
+
+
+.q-field__label {
+    left: auto;       
+    right: 0;      
+  }
+
+  .q-field__inner {
+    text-align: right;
+}

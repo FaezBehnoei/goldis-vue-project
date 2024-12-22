@@ -1,13 +1,12 @@
 <template>
   <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+
+    <carousel-section />
+    <product-section />
   </q-page>
 </template>
 
 <script setup>
-//
+import productSection from 'src/components/productCard.vue';
+import carouselSection from 'src/components/carouselSection.vue';
 </script>
