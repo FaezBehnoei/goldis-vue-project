@@ -1,6 +1,6 @@
 <template>
   <q-header dir="rtl" elevated style="height: 4rem;">
-    <q-toolbar>
+    <q-toolbar class="bg-white">
       <q-btn
         flat
         dense
@@ -19,13 +19,13 @@
         <div
          class="q-pa-sm">
           <q-btn-dropdown
-           color="primary" icon="shopping_cart"
-           style="width: 300px;"
+           color="red-1" icon="shopping_cart"
+           style="width: 300px; "
            >
             <template #label>
               <q-img
                 :src="user.avatar"
-                style="width: 60px; border-radius: 30%;"
+                style="width: 60px; border-radius: 30%; height: 40px;"
                 class="q-ml-xl q-mr-xl"
               />
             </template>
@@ -87,3 +87,4 @@ onMounted(fetchUser)
 
 defineEmits(['openRightDrawer']);
 </script>
+
