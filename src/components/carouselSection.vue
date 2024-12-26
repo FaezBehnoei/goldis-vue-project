@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-sm q-mt-xl q-mb-md">
+  <div class="q-mb-md">
     <div v-if="loading" class="text-center">
       <q-spinner-dots color="primary" size="3em" />
       <p class="text-h6 text-primary">Loading images...</p>
@@ -19,7 +19,7 @@
       control-color="white"
       :swipeable="true"
       class="my-carousel"
-      style="width: 90vw; margin: auto;"
+      style="width: 100vw; margin: 0;"
     >
       <q-carousel-slide
         v-for="(imageUrl, index) in selectedImg"
@@ -58,7 +58,7 @@ onMounted(async () => {
   try {
     const { data } = await axios.get('/api/products');
     images.value = data;
-    selectedImg.value = images.value.splice(0 ,4)
+    selectedImg.value = images.value.splice(0,4)
 
   }finally {
     loading.value = false;
@@ -70,10 +70,10 @@ onMounted(async () => {
 
 <style scoped>
 .my-carousel {
-  max-width: 70vw;
-  height: 60vh;
+  max-width: 100vw;
+  height: 90vh;
   width: 100%;
-  margin: auto;
+  margin: 0;
 }
 
 .my-carousel-slide {
@@ -82,7 +82,6 @@ onMounted(async () => {
   align-items: center;
   width: 100%;
   height: 30rem;
-  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -101,7 +100,7 @@ onMounted(async () => {
 
 .carousel-caption {
   position: absolute;
-  bottom: 20px;
+  bottom: 5rem;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 5px;

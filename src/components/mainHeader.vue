@@ -1,5 +1,5 @@
 <template>
-  <q-header dir="rtl" elevated>
+  <q-header dir="rtl" elevated style="height: 4rem;">
     <q-toolbar>
       <q-btn
         flat
@@ -8,9 +8,10 @@
         icon="menu"
         aria-label="Menu"
         @click="$emit('openRightDrawer')"
+        class="text-red-2"
       />
 
-      <q-toolbar-title> فروشگاه آنلاین </q-toolbar-title>
+      <q-toolbar-title class="text-red-3"> فروشگاه آنلاین </q-toolbar-title>
 
 
 
@@ -18,12 +19,14 @@
         <div
          class="q-pa-sm">
           <q-btn-dropdown
-           color="primary" icon="shopping_cart">
+           color="primary" icon="shopping_cart"
+           style="width: 300px;"
+           >
             <template #label>
               <q-img
                 :src="user.avatar"
-                style="width: 50px; border-radius: 50%;"
-                class="q-ml-sm q-mr-md"
+                style="width: 60px; border-radius: 30%;"
+                class="q-ml-xl q-mr-xl"
               />
             </template>
             <q-list dir="rtl">
@@ -42,9 +45,10 @@
                     clickable
                     v-close-popup
                     style="border-top: 1px solid #e0e0e0;"
+                    class="flex row"
                 >
                     <q-item-section
-                     class="flex row items-center"
+                     class="flex items-center"
                     >
                       <q-img :src="product.image"
                       style="width: 50px; border-radius: 10%;"
