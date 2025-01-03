@@ -87,6 +87,7 @@ export default defineConfig((/* ctx */) => {
         rtl: true
       },
 
+      
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 

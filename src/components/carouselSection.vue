@@ -25,14 +25,14 @@
         v-for="(imageUrl, index) in selectedImg"
         :key="index"
         :name="index + 1"
-        :img-src="imageUrl.image"
         class="my-carousel-slide"
       >
-        <template v-slot:default>
-          <div class="carousel-caption">
-            <p class="text-h5 text-shadow ">{{ imageUrl.description || 'Image Caption' }}</p>
-          </div>
-        </template>
+      <div class="image-container">
+          <img :src="imageUrl.image" alt="Image" class="carousel-img" />
+        </div>
+        <div class="carousel-caption">
+          <p class="text-h5 text-shadow">{{ imageUrl.description || 'Image Caption' }}</p>
+        </div>
       </q-carousel-slide>
 
       <template v-slot:control-left>
@@ -70,9 +70,9 @@ onMounted(async () => {
 
 <style scoped>
 .my-carousel {
-  max-width: 100vw;
+  max-width: 100%;
   height: 90vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
 }
 
@@ -80,22 +80,16 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 30rem;
+  width: auto;
+  height: 90vh;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.my-carousel-slide:hover {
-  transform: scale(1.01);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-}
 
-.my-carousel-slide > img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
+.my-carousel-slide >img{
+  object-fit: contain;
 }
 
 .carousel-caption {
